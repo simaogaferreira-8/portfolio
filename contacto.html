@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700|Roboto+Slab:400&display=swap" rel="stylesheet">
+</head>
+
+<header class="header">
+        <div class="header-left">Simão Ferreira</div>
+        <nav class="header-right">
+            <div class = buttons >
+            <a href="index.html" class="button">sobre mim</a>
+            <a href="portfolio.html" class="button">portfólio</a>
+            <a href="contacto.html" class="button">contacto</a>
+            </div>
+        </nav>
+    </header>
+
+<body>
+   
+    <main class="main-content">
+        <section class="contact-text">
+            <h1>Fale comigo</h1>
+            <p>Se gostou do meu trabalho e dos projetos realizados por mim, ficarei contente com o seu contacto.
+            Se não, obrigado na mesma pela sua curiosidade pelos meus projetos.</p>
+            <p class="contact-info">
+                <a href="mailto:simaogaferreira@gmail.com">simaogaferreira@gmail.com</a><br>
+                969 331 935
+            </p>
+        </section>
+        <section class="contact-form">
+            <form action="https://formsubmit.co/simaogaferreira@gmail.com" method="POST">
+                <div class="form-row">
+                    <label class="form-group">
+                        <span>Nome</span>
+                        <input type="text" name="firstName" required>
+                    </label>
+                    <label class="form-group">
+                        <span>Sobrenome</span>
+                        <input type="text" name="lastName" required>
+                    </label>
+                </div>
+                <label class="form-group">
+                    <span>E-mail</span>
+                    <input type="email" name="email" required>
+                </label>
+                <label class="form-group">
+                    <span>Mensagem</span>
+                    <textarea name="message" rows="6" required></textarea>
+                </label>
+                <button type="submit" class="submit-button">ENVIAR</button>
+
+                <!-- Formsubmit.co settings -->
+                <input type="hidden" name="_subject" value="Nova mensagem do site" />
+                <input type="hidden" name="_captcha" value="false" />
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer-content">Simão Ferreira © 2026</div>
+    </footer>
+</body>
+</html>

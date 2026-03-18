@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="PT">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header-left">Simão Ferreira</div>
+        <nav class="header-right">
+            <div class = buttons >
+            <a href="index.html" class="button">sobre mim</a>
+            <a href="portfolio.html" class="button">portfólio</a>
+            <a href="contacto.html" class="button">contacto</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="video-page">
+        <section class="video-grid">
+            <div class="video-card">
+                <div class="video-player">
+                    <video preload="metadata" poster="../static/photos/motion-poster1.png" controls>
+                        <source src="../static/videos/motion1.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeo.
+                    </video>
+                    <button class="video-play" aria-label="Play vídeo"></button>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-player">
+                    <video preload="metadata" poster="../static/photos/motion-poster2.png" controls>
+                        <source src="../static/videos/motion2.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeo.
+                    </video>
+                    <button class="video-play" aria-label="Play vídeo"></button>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-player">
+                    <video preload="metadata" poster="../static/photos/motion-poster3.png" controls>
+                        <source src="../static/videos/motion3.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeo.
+                    </video>
+                    <button class="video-play" aria-label="Play vídeo"></button>
+                </div>
+            </div>
+            <div class="video-card">
+                <div class="video-player">
+                    <video preload="metadata" poster="../static/photos/motion-poster4.png" controls>
+                        <source src="../static/videos/motion4.mp4" type="video/mp4">
+                        Seu navegador não suporta vídeo.
+                    </video>
+                    <button class="video-play" aria-label="Play vídeo"></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="category-nav">
+        <a href="video.html" class="nav-prev"><span class="arrow">‹</span> <span class="label">vídeo</span></a>
+        <a href="3d.html" class="nav-next"><span class="label">3D</span> <span class="arrow">›</span></a>
+    </div>
+
+    <footer class="footer">
+        <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+            <div style="font-family: 'New Spirit Medium', serif; font-size: 3rem; color: #4b183b; margin-left: 80px; font-weight: bold">Obrigado</div>
+            <div style="text-align: right; margin-right: 80px;">
+                <div style="font-family: 'New Spirit Medium', serif; font-size: 2rem; color: #4b183b; font-weight: bold">Contacto</div>
+                <div style="font-family: 'Roboto Slab', serif; font-size: 1.2rem; color: #4b183b;">simaogaferreira@gmail.com</div>
+                <div style="font-family: 'Roboto Slab', serif; font-size: 1.2rem; color: #4b183b; font-weight: bold;">969 331 935</div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.video-player').forEach((player) => {
+            const video = player.querySelector('video');
+            const button = player.querySelector('.video-play');
+
+            const updateState = () => {
+                if (video.paused) {
+                    player.classList.remove('playing');
+                    button.style.opacity = '1';
+                } else {
+                    player.classList.add('playing');
+                    button.style.opacity = '0';
+                }
+            };
+
+            button.addEventListener('click', () => {
+                if (video.paused) {
+                    video.controls = true;
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            });
+
+            video.addEventListener('play', updateState);
+            video.addEventListener('pause', updateState);
+            video.addEventListener('ended', () => {
+                video.controls = false;
+                updateState();
+            });
+
+            player.addEventListener('mouseenter', () => {
+                player.classList.add('hovered');
+            });
+            player.addEventListener('mouseleave', () => {
+                player.classList.remove('hovered');
+            });
+
+            updateState();
+        });
+    </script>
+</body>
+</html>
