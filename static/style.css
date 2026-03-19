@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'New Spirit Medium';
-	src: url('./font/new-spirit-medium/new-spirit-medium.otf') format('truetype');
+	src: url('font/new-spirit-medium/new-spirit-medium.otf') format('truetype');
 	font-weight: normal;
 	font-style: normal;
 	font-display: swap;
